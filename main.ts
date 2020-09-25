@@ -1,5 +1,4 @@
 input.onGesture(Gesture.TiltLeft, function () {
-    makerController.player1.setAnalog(ArcadeAnalogButton.LeftRight, input.acceleration(Dimension.X))
     light.showRing(
     `blue blue blue blue blue black black blue black black`
     )
@@ -13,7 +12,6 @@ input.buttonA.onEvent(ButtonEvent.Click, function () {
     light.setAll(0xffffff)
 })
 input.onGesture(Gesture.TiltRight, function () {
-    makerController.player1.setAnalog(ArcadeAnalogButton.LeftRight, input.acceleration(Dimension.X))
     light.showRing(
     `black black blue black black blue blue blue blue blue`
     )
@@ -28,3 +26,6 @@ input.buttonB.onEvent(ButtonEvent.Click, function () {
 })
 light.setBrightness(10)
 light.setAll(0xffffff)
+forever(function () {
+    makerController.player1.setAnalog(ArcadeAnalogButton.LeftRight, input.acceleration(Dimension.X))
+})
